@@ -10,6 +10,22 @@ CLI tool to convert your pug code to html code. Supports Vue Single File Compone
 
 <!-- toc -->
 # Usage
-<!-- usage -->
-# Commands
-<!-- commands -->
+```
+yarn global add pug-to-html
+pug-to-html [PATH]
+```
+### Arguments
+
+- PATH  Path to the directory where with vue files. Defaults to current working directory
+
+### Options
+
+- -h, --help     show CLI help
+- -v, --version  show CLI version
+
+### Description
+
+This tool will recursively scan provided path, and replace pug code with html code.
+
+- For *.pug files, it will replace entire file contents and rename it to *.html
+- For *.vue files, it will find <template lang="pug"> sections and replace their contents with HTML
