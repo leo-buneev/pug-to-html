@@ -16,6 +16,17 @@ class PugToHtmlCommand extends Command {
     let newLength = 0
     let filesCount = 0
     for (const file of files) {
+      if (file.path.toLowerCase().endsWith('.pug')) {
+        try {
+          const fileContents = await fs.readFile(file.path, 'utf-8')
+          const newFileContents = pug.render(fileContents, {pretty: '  '})
+          await fs.writeFile(file.path, newFileContents)
+          await fs.rename(file.path.substr(0, file.path.length - 4) + '.html')
+        } catch (error) {
+          this.error(`ERROR while processing ${file.path}`)
+          throw error
+        }
+      }
       if (file.path.toLowerCase().endsWith('.vue')) {
         try {
           const fileContents = await fs.readFile(file.path, 'utf-8')
