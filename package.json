@@ -41,7 +41,7 @@
   },
   "repository": "leo-buneev/pug-to-html",
   "scripts": {
-    "posttest": "eslint .",
-    "test": "echo NO TESTS"
+    "lint": "eslint .",
+    "dev": "./bin/run"
   }
 }

@@ -21,7 +21,7 @@ class PugToHtmlCommand extends Command {
           const fileContents = await fs.readFile(file.path, 'utf-8')
           const newFileContents = pug.render(fileContents, {pretty: '  '})
           await fs.writeFile(file.path, newFileContents)
-          await fs.rename(file.path.substr(0, file.path.length - 4) + '.html')
+          await fs.rename(file.path, file.path.substr(0, file.path.length - 4) + '.html')
         } catch (error) {
           this.error(`ERROR while processing ${file.path}`)
           throw error
