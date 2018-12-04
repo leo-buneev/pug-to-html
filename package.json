@@ -1,7 +1,7 @@
 {
   "name": "pug-to-html",
   "description": "CLI tool to convert your pug code to html code. Supports Vue Single File Components!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "leo-buneev <buneev.leonid@gmail.com>",
   "bin": {
     "pug-to-html": "./bin/run"
