@@ -30,7 +30,7 @@ class PugToHtmlCommand extends Command {
       if (file.path.toLowerCase().endsWith('.vue')) {
         try {
           const fileContents = await fs.readFile(file.path, 'utf-8')
-          const newFileContents = fileContents.replace(/<template lang=['"]pug["']>\n+([\s\S]*)<\/template>/i, (substr, match) => {
+          const newFileContents = fileContents.replace(/<template lang=['"]pug["']>[\r\n]+([\s\S]*)<\/template>/i, (substr, match) => {
             if (match.startsWith(' ')) {
               match = dedent(match)
             }
