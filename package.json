@@ -16,7 +16,7 @@
     "esm": "^3.0.84",
     "fs-extra": "^7.0.1",
     "klaw-sync": "^6.0.0",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^5.5",
